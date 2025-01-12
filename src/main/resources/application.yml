@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: management
+  datasource:
+    url: jdbc:mysql://localhost:3306/management
+    username: root
+    password: Admin@4321
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      pool-name: HikariPool-1
+      max-lifetime: 2000000
+      connection-timeout: 30000
+      leak-detection-threshold: 15000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+jwt:
+  secret: a712d842cb062e38cb25edba32e1f446bdd37cbac314f1a5d472cde8578e152229d568298554cf648bb5588ff9eba5f06535e14cb7d41b147767b0d1ba6faf2d544d03211a8ea40c04109f9a0535f804f141f8afe8a43618e84bc793fce1f86f86bee937ba718eee831d814f6e382d3d13835fd7b85956fc5eb9384cfed9e0a31ad65bf3bc82105de84277a290783147b18f981f7e8d9f6e029feed7f774fdc3c582cc67090954e80b73f92e77e09894aaabd69a2a6e0c7437b97c8833fcea7aa776b6a1487ccef3c9568400a14a93419df83bca96ccee870d5da1c62a33caaab47ceec37ea906c33200f06470abe4e8cfeb95edd245f80a1163bb3a18250291
+  expiration: 3600000
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.springframework.security: DEBUG
